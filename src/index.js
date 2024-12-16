@@ -18,13 +18,13 @@ const SERVER_PORT = 8080; //localhost range - 3000 - 9999
 
 //- GET endpoint - url endpoint or route - ie: json placeholder, githpy api 
 app.get("/", (req,res) => {
-    const _msg = "# Dashboard api 1.0.1";
+    const _msg = "# Dashboard api";
     console.log(_msg)
     res.send(_msg)
 });
 
 app.get("/test1", (req,res) => {
-    const _msg = "# Dashboard api 1.0.1 - test1 route";
+    const _msg = "# Dashboard api - test1 route";
     console.log(_msg)
     res.send(_msg)
 });
