@@ -30,15 +30,15 @@ app.get("/test1", (req,res) => {
 });
 
 app.get("/login/:username/:password",(req, res) =>{
- 
+
      const _username = req.params.username;
      const _password = req.params.password;
- 
+
      let _msg = `# login route, username: ${_username}, password: ${_password}`;
      console.log(_msg)
- 
+
      let _data = {};
- 
+
      login(_username, _password, (islogin) => {
         _msg = "* login successful";
         _data = { msg: _msg, login: true };
@@ -47,7 +47,7 @@ app.get("/login/:username/:password",(req, res) =>{
             _msg = "* invalid username/password";
             _data = { msg: _msg, login: false };
         }
-    
+
        res.send(_data)
 
     });
@@ -55,17 +55,17 @@ app.get("/login/:username/:password",(req, res) =>{
   });
 
  app.post("/register", (req, res) => {
- 
+
     const _body = req.body;
-     
+
     let _msg = `# register route, body: ${JSON.stringify(_body)}`;
     console.log(_msg);
-     
+
     let _return = {};
-     
+
     const _username = _body.username;
     const _password = _body.password;
-     
+
     insert_user(_username, _password, (isnewuser) => {
         _msg = "* registration successful";
         _return = { msg: _msg, register: true };
@@ -79,8 +79,8 @@ app.get("/login/:username/:password",(req, res) =>{
     });
 
 });
-     
-    
+
+
 //-other - POST, DELETE, PUT
 
 //-start node exporess web server - ie: live server
